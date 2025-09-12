@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* Make sure body has no unwanted gap */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: white;  /* background: linear-gradient(135deg, #6a11cb, #2575fc);*/
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Container */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+/* Title */
+.app-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: none;
+  color: black;
+  grid-column: span 2; /* ✅ makes title span both columns in grid */
+}
+
+/* Grid Layout */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* equal columns */
+  gap: 2rem;
+  align-items: stretch; /* ✅ makes both columns equal height */
+}
+
+/* ---------------- FORM STYLING ---------------- */
+.form-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  color: black;
+}
+
+.form-box:hover {
+  transform: translateY(-3px);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.form-box input,
+.form-box select {
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  background: #fff;
+  color: black;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Button */
+.form-box button {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.form-box button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+}
+
+/* ---------------- ADVICE BOX ---------------- */
+.output-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.advice-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  /* ✅ same card look as form */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  color: black;
+}
+
+.advice-box:hover {
+  transform: translateY(-3px);
+}
+
+.advice-box h2 {
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.advice-box ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+  color: black;
+}
+
+.advice-box li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.placeholder {
+  font-style: italic;
+  opacity: 0.8;
+  color: black;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .form-box,
+  .advice-box {
+    margin: auto;
+    width: 100%;
+  }
+
+  .app-title {
+    grid-column: span 1; /* reset for mobile */
+  }
+}
